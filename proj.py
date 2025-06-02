@@ -5,8 +5,8 @@ import yagmail
 
 # Load email credentials from .env file
 load_dotenv()
-EMAIL_USER = os.getenv('EMAIL_USER')
-EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+EMAIL_USER = os.getenv('EMAIL_USER', 'your_email@example.com')
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD', 'your_password_here')
 
 # Initialize the email client
 yag = yagmail.SMTP(EMAIL_USER, EMAIL_PASSWORD)
@@ -28,7 +28,7 @@ Thank you for considering my application. Please feel free to reach out if there
 Best regards,
 Yash Singh
 Phone: +91-8005526982
-Email: ys648839@gmail.com
+Email: your_email@example.com
 """
     return email_template.format(HRName=hr_name, CompanyName=company_name)
 

@@ -10,8 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configuration for email login (loaded from the .env file)
-EMAIL_USER = os.getenv('EMAIL_USER')
-EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+EMAIL_USER = os.getenv('EMAIL_USER', 'your_email@example.com')
+EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD', 'your_password_here')
 
 @app.route('/')
 def index():
